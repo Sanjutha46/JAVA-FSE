@@ -2,12 +2,16 @@ public class TestFactoryMethod {
 
     public static void main(String[] args) {
 
-        IDCardFactory factory = new IDCardFactory();
+        DocumentFactory wordFactory = new WordDocumentFactory();
+        Document wordDoc = wordFactory.createDocument();
+        wordDoc.open();
 
-        IDCard studentCard = factory.createIDCard("Student");
-        studentCard.generate();
+        DocumentFactory pdfFactory = new PdfDocumentFactory();
+        Document pdfDoc = pdfFactory.createDocument();
+        pdfDoc.open();
 
-        IDCard teacherCard = factory.createIDCard("Teacher");
-        teacherCard.generate();
+        DocumentFactory excelFactory = new ExcelDocumentFactory();
+        Document excelDoc = excelFactory.createDocument();
+        excelDoc.open();
     }
 }
